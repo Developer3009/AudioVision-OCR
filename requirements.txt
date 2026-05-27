@@ -1,0 +1,10 @@
+// pip install -r requirements.txt
+
+streamlit
+opencv-python
+pytesseract
+numpy
+Pillow
+google-generativeai
+python-dotenv
+edge-tts
