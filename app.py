@@ -21,7 +21,7 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 # ============================================
 # GEMINI CONFIG
 # ============================================
-genai.configure(api_key="AQ.Ab8RN6LYIOgAPHRa9WHlSmnNgrOcReFYRogcD_9wO43I_2bvLQ")
+genai.configure(api_key="ADD_YOUR_API_KEY")
 
 MODEL = genai.GenerativeModel(
     "gemini-2.5-flash"
