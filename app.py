@@ -21,7 +21,7 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 # ============================================
 # GEMINI CONFIG
 # ============================================
-genai.configure(api_key="ADD_YOUR_API_KEY")
+genai.configure(api_key=API_KEY)
 
 MODEL = genai.GenerativeModel(
     "gemini-2.5-flash"
@@ -30,9 +30,13 @@ MODEL = genai.GenerativeModel(
 # ============================================
 # TESSERACT PATH
 # ============================================
-pytesseract.pytesseract.tesseract_cmd = (
-    r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-)
+import platform
+import pytesseract
+
+if platform.system() == "Windows":
+    pytesseract.pytesseract.tesseract_cmd = (
+        r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+    )
 
 # ============================================
 # STREAMLIT CONFIG
@@ -47,18 +51,88 @@ st.set_page_config(
 # ============================================
 OCR_LANGUAGES = {
     "English": "eng",
+    "Hindi": "hin",
+    "Marathi": "mar",
+    "Gujarati": "guj",
+    "Punjabi": "pan",
+    "Bengali": "ben",
+    "Tamil": "tam",
+    "Telugu": "tel",
+    "Kannada": "kan",
+    "Malayalam": "mal",
+    "Urdu": "urd",
+    "Sanskrit": "san",
     "Spanish": "spa",
     "French": "fra",
-    "Hindi": "hin",
-    "German": "deu"
+    "German": "deu",
+    "Italian": "ita",
+    "Portuguese": "por",
+    "Russian": "rus",
+    "Chinese Simplified": "chi_sim",
+    "Chinese Traditional": "chi_tra",
+    "Japanese": "jpn",
+    "Korean": "kor",
+    "Arabic": "ara",
+    "Turkish": "tur",
+    "Dutch": "nld",
+    "Greek": "ell",
+    "Polish": "pol",
+    "Thai": "tha",
+    "Vietnamese": "vie",
+    "Indonesian": "ind",
+    "Malay": "msa",
+    "Czech": "ces",
+    "Danish": "dan",
+    "Finnish": "fin",
+    "Hungarian": "hun",
+    "Norwegian": "nor",
+    "Romanian": "ron",
+    "Slovak": "slk",
+    "Swedish": "swe",
+    "Ukrainian": "ukr"
 }
+
 
 TTS_VOICES = {
     "English": "en-US-AriaNeural",
+    "Hindi": "hi-IN-SwaraNeural",
+    "Marathi": "mr-IN-AarohiNeural",
+    "Gujarati": "gu-IN-DhwaniNeural",
+    "Punjabi": "pa-IN-GurleenNeural",
+    "Bengali": "bn-IN-TanishaaNeural",
+    "Tamil": "ta-IN-PallaviNeural",
+    "Telugu": "te-IN-ShrutiNeural",
+    "Kannada": "kn-IN-SapnaNeural",
+    "Malayalam": "ml-IN-SobhanaNeural",
+    "Urdu": "ur-PK-UzmaNeural",
     "Spanish": "es-ES-ElviraNeural",
     "French": "fr-FR-DeniseNeural",
-    "Hindi": "hi-IN-SwaraNeural",
-    "German": "de-DE-KatjaNeural"
+    "German": "de-DE-KatjaNeural",
+    "Italian": "it-IT-ElsaNeural",
+    "Portuguese": "pt-BR-FranciscaNeural",
+    "Russian": "ru-RU-SvetlanaNeural",
+    "Chinese Simplified": "zh-CN-XiaoxiaoNeural",
+    "Chinese Traditional": "zh-TW-HsiaoChenNeural",
+    "Japanese": "ja-JP-NanamiNeural",
+    "Korean": "ko-KR-SunHiNeural",
+    "Arabic": "ar-SA-ZariyahNeural",
+    "Turkish": "tr-TR-EmelNeural",
+    "Dutch": "nl-NL-ColetteNeural",
+    "Greek": "el-GR-AthinaNeural",
+    "Polish": "pl-PL-ZofiaNeural",
+    "Thai": "th-TH-PremwadeeNeural",
+    "Vietnamese": "vi-VN-HoaiMyNeural",
+    "Indonesian": "id-ID-GadisNeural",
+    "Malay": "ms-MY-YasminNeural",
+    "Czech": "cs-CZ-VlastaNeural",
+    "Danish": "da-DK-ChristelNeural",
+    "Finnish": "fi-FI-NooraNeural",
+    "Hungarian": "hu-HU-NoemiNeural",
+    "Norwegian": "nb-NO-PernilleNeural",
+    "Romanian": "ro-RO-AlinaNeural",
+    "Slovak": "sk-SK-ViktoriaNeural",
+    "Swedish": "sv-SE-SofieNeural",
+    "Ukrainian": "uk-UA-PolinaNeural"
 }
 
 # ============================================
